@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Major - Automation and Cloud Technologies Expert</title>
+    <meta name="description" content="Robert Major's portfolio showcasing expertise in automation, scripting, cloud technologies, and personal projects.">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #2c2c2c;
+            color: #eaeaea;
+        }
+
+        header {
+            position: relative;
+            color: #fff;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            min-height: 200px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        header .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+
+        header h1, .project-panel h2, section h1, section h2, section h3 {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            animation: bounceInDown 1s;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            margin: 0;
+            padding-top: 10px;
+            font-size: 1.5em;
+            font-style: italic;
+            animation: fadeIn 2s;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .preview-panel {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .panel {
+            background: #3a3a3a;
+            padding: 20px;
+            border-radius: 8px;
+            width: 22%;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel:hover {
+            background: #505050;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-section {
+            display: none;
+            background: #3a3a3a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            border: 1px solid #666;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 1s;
+        }
+
+        .profile-img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            animation: zoomIn 1s;
+        }
+
+        .project-panel {
+            background: #4a4a4a;
+            margin: 20px 0;
+            padding: 20px;
+            border: #666 1px solid;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s;
+        }
+
+        .project-panel h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.8em;
+        }
+
+        .project-panel h2 a {
+            color: #77aaff;
+            text-decoration: none;
+        }
+
+        .project-panel h2 a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .link-to-resume {
+            color: #77aaff;
+            text-decoration: none;
+        }
+
+        .link-to-resume:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="animate__animated animate__bounceInDown">
+        <div class="header-bg" id="header-bg"></div>
+        <div class="container">
+            <h1>Concatenated.com</h1>
+            <p>A collection of things</p>
+        </div>
+    </header>
+    <main>
+        <div class="preview-panel">
+            <div class="panel animate__animated animate__fadeIn" data-section="about">About Me</div>
+            <div class="panel animate__animated animate__fadeIn" data-section="projects">Projects</div>
+            <div class="panel animate__animated animate__fadeIn" data-section="resume">Resume</div>
+            <div class="panel animate__animated animate__fadeIn" data-section="contact">Contact</div>
+        </div>
+        <section id="about" class="content-section active">
+            <h1>About Me</h1>
+            <img src="profile.jpg" alt="Robert Major" class="profile-img">
+            <p>Hello! I'm Robert Major, a visionary technologist with extensive experience in <strong>automation</strong>, <strong>scripting</strong>, <strong>UNIX</strong>, and <strong>cloud technologies</strong>. My passion for continuous learning and innovation has driven me to refine my skills across various technical environments over the years. I thrive in collaborative team settings, where I enjoy sharing knowledge and learning from others.</p>
+            <p>When I'm not immersed in the latest tech trends, I'm living a vibrant life as a husband and father. Our home is filled with energy, thanks to our lovable cat and dog. Cooking is one of my great passions—whether I'm whipping up a quick weekday meal or experimenting with a new recipe, the kitchen is my sanctuary. I'm literally lost in the sauce.</p>
+            <p>Music plays a significant role in my life. As a musician and recording engineer, I play the drums, guitar, bass, synthesizers, and even lend my voice to my tracks. Creating and producing music is my creative outlet, allowing me to blend electronic and organic sounds into unique auditory experiences.</p>
+            <p>I've been a lifelong technology enthusiast, starting with the Commodore 64, writing BASIC, and moving on to 68k Apple computers, PowerPCs, and Windows PCs running DOS/Win3.11. My journey included exploring Dialup BBS services and the rapid expansion of Linux technology. This passion led me to a Third Shift Global Support desk job at Fairchild Semiconductor in South Portland, Maine, where I was exposed to a vast array of technologies. I developed a particular interest in UNIX systems and noticed I rarely had to wake up the UNIX admins. After several years of working long nights, supporting the global manufacturing infrastructure, and triaging everything from database issues to troubleshooting legacy UNIX systems, I had studied enough to secure a UNIX administrator job at TD Bank.</p>
+            <p>Over the last 20 years, I've gained extensive experience in both IT and the financial industry. My journey in IT began at TD Bank as a Solaris and MQSeries Administrator. From there, I transitioned to Wachovia Bank, where I served as a Systems Engineer, focusing on Linux and UNIX automation and providing WebSphere ND support for the Brokerage unit. After Wachovia was acquired by Wells Fargo, I continued to offer WebSphere support for the Brokerage and gradually advanced into a Senior Engineering role within the Middleware organization. In this role, I specialized as an Automation, Tools, and Integration Engineer, delivering effective, reliable, and maintainable automation solutions and tools across the corporation.</p>
+            <p>My most recent position at Wells Fargo involved supporting their Cloud presence on Azure within the AI/ML department. Leveraging my extensive automation experience, I provided solutions and tools to facilitate the company's expansion into the Cloud. I am currently seeking new and exciting opportunities that match my skills, where I can continue to learn and provide significant value to a team, a company, and a vision.</p>
+            <p>Some of my recent projects include experimenting with GPT to create websites like this one and exploring home automation technologies to make life smarter and more efficient. I'm always on the lookout for new opportunities that leverage my expertise in automation, UNIX, and cloud technologies, ideally in a remote work environment. If my experience sounds like it might be a good fit for your project, please check out my complete resume and get in touch!</p>
+        </section>
+        <section id="projects" class="content-section">
+            <h1>Current Projects</h1>
+            <div class="project-panel">
+                <h2><a href="https://github.com/rlmajor/Copy_Base_URL" target="_blank">Copy Base URL</a></h2>
+                <p>A Firefox extension that allows users to copy the base URL of the current page. This tool simplifies the process of copying URLs by providing a one-click solution directly from the browser. I used GitHub actions for building and packaging the extension as a learning experience.</p>
+                <p><strong>Technologies used:</strong> JavaScript, HTML, CSS</p>
+            </div>
+            <div class="project-panel">
+                <h2><a href="https://distrokid.com/hyperfollow/mechanisma/revision" target="_blank">Mechanisma - Revision</a></h2>
+                <p>My latest musical release, available on various streaming platforms. Mechanisma is my personal solo music project where I write, perform, record, and produce the music by myself. I play the drums, guitar, bass, synthesizers, and vocals, combining electronic and organic sounds to create a unique auditory experience.</p>
+                <p><strong>Platforms:</strong> Spotify, Apple Music, DistroKid</p>
+            </div>
+        </section>
+        <section id="resume" class="content-section">
+            <h1>Resume</h1>
+            <p>Check out my latest resume: <a href="path/to/R Major Resume.pdf" target="_blank">Download Resume</a></p>
+            
+            <h2>Professional Summary</h2>
+            <p>I am a dedicated and forward-thinking professional with extensive experience in automation, scripting, tooling, UNIX, and cloud technologies. I believe in lifelong learning and enjoy both teaching and learning from others. I am eager to contribute to a collaborative team while continuing to expand my knowledge and skills.</p>
+
+            <h2>Skills</h2>
+            <p>My technical background spans multiple platforms, including UNIX/Linux/Windows/macOS, web and application servers, scripting, and automation. I quickly adapt to new technologies and environments and am a highly motivated team player who can inspire others. I bring a professional demeanor coupled with a light, engaging personality and a passion for innovation and continuous improvement.</p>
+            <ul>
+                <li>Proficient in cross-platform work</li>
+                <li>Skilled in automation tools like Ansible, Terraform, and Python</li>
+                <li>Experienced in cloud technologies including Azure and GCP</li>
+                <li>Familiar with Scrum Agile and Jira</li>
+                <li>Experienced with Docker, NGINX, and Kafka</li>
+                <li>Proficient in GitHub, Microsoft Visual Studio Code, and MySQL</li>
+                <li>Knowledgeable in Selenium and VMware</li>
+            </ul>
+
+            <h2>Work History</h2>
+
+            <h3>Wells Fargo - Cloud Automation & Integration Engineer (01/2024)</h3>
+            <p>In my latest role at Wells Fargo, I focused on cloud automation and integration services. I provided Terraform and cloud support for various Azure Cloud services, including Cognitive Services, Machine Learning, AI Chat, AI Search, Synapse Analytics, Logic Apps, and Application Server Environment (ASE) as well as some GCP support (Cloud Scheduler). I performed code reviews, ensured adherence to standards and best practices, and participated in working sessions with other engineers.</p>
+            <ul>
+                <li>Provided support for Azure Cognitive Services, Machine Learning, and AI Chat</li>
+                <li>Led code reviews and working sessions</li>
+                <li>Maintained documentation for modules and procedures</li>
+            </ul>
+
+            <h3>Wells Fargo - Senior Systems Engineer (01/2007 – 01/2024)</h3>
+            <p>At Wells Fargo, I provided extensive support for the enterprise internal Java application hosting platform. I played a key role in designing and implementing the Java-based enterprise brokerage environment. My responsibilities included capacity planning, risk remediation, and extensive support for the WebSphere suite for Brokerage applications. I managed application server and cluster configurations, IHS server support, maintained SSL key stores and certificates, and performed monitoring and performance tuning. Additionally, I developed and supported several automation tools for application deployment and patching, and contributed to disaster recovery planning and testing.</p>
+            <ul>
+                <li>Provided design and support for the enterprise internal Java application hosting platform</li>
+                <li>Managed application server and cluster configurations</li>
+                <li>Supported WebSphere suite for Brokerage applications</li>
+                <li>Maintained SSL key stores and certificates</li>
+                <li>Performed monitoring and performance tuning of web and application servers</li>
+                <li>Developed and supported automation tools for application deployment and patching</li>
+                <li>Contributed to disaster recovery planning and testing</li>
+            </ul>
+
+            <h3>Wells Fargo - Systems Engineer (01/2005 – 12/2006)</h3>
+            <p>In my initial role at Wells Fargo, I was responsible for developing web-based monitoring and management tools for UNIX systems and WebSphere MQ systems, documenting all processes and procedures, and contributing to disaster recovery planning and testing.</p>
+            <ul>
+                <li>Developed web-based monitoring tools for UNIX and WebSphere MQ</li>
+                <li>Contributed to disaster recovery planning and testing</li>
+            </ul>
+
+            <h3>TD Banknorth - IT Systems Administrator I / II (01/2005 - 01/2007)</h3>
+            <p>At TD Banknorth, I administered UNIX-based systems, performed OS installations and configurations using custom tools and automation, and developed web-based monitoring and management tools for UNIX systems and WebSphere MQ systems. I documented all processes and procedures and contributed to disaster recovery planning and testing.</p>
+            <ul>
+                <li>Administered UNIX-based systems</li>
+                <li>Performed OS installations and configurations</li>
+                <li>Developed web-based monitoring system for WebSphere MQ</li>
+                <li>Created a web-based system management tool for UNIX systems</li>
+                <li>Configured and supported Linux HA and Oracle RAC clusters</li>
+            </ul>
+
+            <h2>Education and Certifications</h2>
+            <p>My educational background and certifications reflect my commitment to continuous learning and professional development. I have completed numerous certifications in cloud technologies, system administration, and agile methodologies.</p>
+            <ul>
+                <li>Terraform Associate Certification</li>
+                <li>Google Cloud Digital Leader Certification</li>
+                <li>Microsoft AZ-900 and AI-900 Certifications</li>
+                <li>Scrum Developer Certified</li>
+                <li>Various UNIX and Linux system administration courses</li>
+            </ul>
+
+            <h2>Hobbies and Interests</h2>
+            <p>In my free time, I am passionate about audio engineering, music production, cooking, and baking. I enjoy exploring home automation technologies and gadgets and am currently studying machine learning and data engineering concepts. I value spending quality time with my family and spoiling our pets.</p>
+            <ul>
+                <li>Audio engineering and music production</li>
+                <li>Home automation technology</li>
+                <li>Cooking and baking</li>
+                <li>Machine learning studies</li>
+            </ul>
+        </section>
+        <section id="contact" class="content-section">
+            <h1>Contact</h1>
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out to me at <a href="mailto:robert.major@gmail.com">robert.major@gmail.com</a> or connect with me on LinkedIn.</p>
+            <p><strong>Email:</strong> robert.major@gmail.com</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/robert-l-major/" target="_blank">linkedin.com/in/robert-l-major</a></p>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Robert Major. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const images = [
+            'https://images.pexels.com/photos/218863/pexels-photo-218863.jpeg',
+            'https://images.pexels.com/photos/96428/pexels-photo-96428.jpeg',
+            'https://images.pexels.com/photos/11018964/pexels-photo-11018964.jpeg',
+            'https://images.pexels.com/photos/995301/pexels-photo-995301.jpeg',
+            'https://images.pexels.com/photos/7087611/pexels-photo-7087611.jpeg',
+            'https://images.pexels.com/photos/744318/pexels-photo-744318.jpeg',
+            'https://images.pexels.com/photos/3710191/pexels-photo-3710191.jpeg',
+            'https://images.pexels.com/photos/1539789/pexels-photo-1539789.jpeg',
+            'https://images.pexels.com/photos/5650700/pexels-photo-5650700.jpeg',
+            'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg',
+            'https://images.pexels.com/photos/27427258/pexels-photo-27427258.jpeg',
+            'https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg',
+            'https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg',
+            'https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg',
+            'https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg',
+            'https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg',
+            'https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg'
+        ];
+
+        let preloadedImages = [];
+
+        function preloadImages(urls) {
+            preloadedImages = urls.map(url => {
+                const img = new Image();
+                img.src = url;
+                return img;
+            });
+        }
+
+        function changeBackgroundImage() {
+            const headerBg = document.getElementById('header-bg');
+            const randomImage = preloadedImages[Math.floor(Math.random() * preloadedImages.length)];
+            console.log(`Changing background image to: ${randomImage.src}`);
+            headerBg.style.backgroundImage = `url(${randomImage.src})`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            preloadImages(images);
+            changeBackgroundImage();
+            setInterval(changeBackgroundImage, 7000);
+        });
+
+        document.getElementById('header-bg').addEventListener('click', changeBackgroundImage);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.nav-link, .link-to-resume').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                targetSection.classList.add('active');
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Activate corresponding section on click
+        document.querySelectorAll('.panel').forEach(panel => {
+            panel.addEventListener('click', function () {
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(this.getAttribute('data-section')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
