@@ -31,6 +31,7 @@
             min-height: 200px;
             text-align: center;
             overflow: hidden;
+        
         }
 
         header .header-bg {
@@ -42,6 +43,7 @@
             background-size: cover;
             background-position: center;
             transition: background-image 1s ease-in-out;
+            filter: blur(1px);
         }
 
         header h1, .project-panel h2, section h1, section h2, section h3 {
@@ -54,7 +56,7 @@
             animation: bounceInDown 1s;
             position: relative;
             z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 0px 2px 10px #000, 0px 2px 10px #000
         }
 
         header p {
@@ -97,6 +99,8 @@
 
         .content-section {
             display: none;
+            width: 97%;
+            margin: 0 auto;
             background: #3a3a3a;
             padding: 20px;
             margin-bottom: 20px;
@@ -189,13 +193,10 @@
     <img src="profile.jpg" alt="Robert Major" class="profile-img">
     <p>Hello! I’m Robert Major, a seasoned technology expert with an extensive background and experience in automation, scripting, UNIX, and cloud technologies. Driven by a passion for continuous learning and innovation, I’ve developed a comprehensive technical background in several technologies across a large number of diverse technical environments.</p>
     
-    <p>I've been a lifelong technology enthusiast, starting with the Commodore 64, writing BASIC, and moving on to 68k Apple computers, PowerPCs, and Windows PCs running DOS/Win3.11. My journey included exploring Dialup BBS services and the rapid expansion of Linux technology. This passion led me to a Third Shift Global Support desk job at <a href="https://en.wikipedia.org/wiki/Fairchild_Semiconductor" target="_blank">Fairchild Semiconductor</a> in South Portland, Maine, where I was exposed to a vast array of technologies. I developed a particular interest in UNIX systems and spent a significant time studying the ones we supported within the company. After several years of working long nights, supporting the global manufacturing infrastructure, and triaging everything from database issues to troubleshooting legacy UNIX systems, in addition to taking Solaris and Linux courses at a local technical school during the day, I secured a job as a UNIX administrator at <a href="https://en.wikipedia.org/wiki/TD_Bank,_N.A." target="_blank">TD Bank</a> at one of their data centers in Lewiston, Maine.</p>
-
+    <p>I've been a lifelong technology enthusiast, starting with the Commodore 64, writing BASIC, and moving on to 68k Apple computers, PowerPCs, and Windows PCs running DOS/Win3.11. My journey included exploring Dialup BBS services and the rapid expansion of Linux technology. This passion led me to a Third Shift Global Support desk job at <a href="https://en.wikipedia.org/wiki/Fairchild_Semiconductor" target="_blank">Fairchild Semiconductor</a> in South Portland, Maine, where I was exposed to a vast array of technologies. I developed a particular interest in UNIX systems and spent a significant time studying the ones we supported within the company. After several years of working long nights, supporting the global manufacturing infrastructure, and triaging everything from database issues to troubleshooting <a href="https://en.wikipedia.org/wiki/SCO_Group" target="_blank">legacy UNIX systems</a>, in addition to taking Solaris and Linux courses at a local technical school during the day, I secured a job as a UNIX administrator at <a href="https://en.wikipedia.org/wiki/TD_Bank,_N.A." target="_blank">TD Bank</a> at one of their data centers in Lewiston, Maine. Providing both UNIX and MQSeries support.</p>
     
     <p>At TD Bank, I managed UNIX systems, supported the production infrastructure, and triaged issues from databases to legacy UNIX systems. I then moved to <a href="https://en.wikipedia.org/wiki/Wachovia" target="_blank">Wachovia Bank</a>, where I served as a Systems Engineer, focusing on Linux and UNIX automation and providing WebSphere ND support for the Brokerage business line. My responsibilities included developing and supporting automation tools for application deployment and patching, and contributing to disaster recovery planning and testing. After Wachovia was acquired by <a href="https://en.wikipedia.org/wiki/Wells_Fargo" target="_blank">Wells Fargo</a>, I continued to provide WebSphere support for the Brokerage unit and advanced into a Senior Engineering role within the Middleware organization. I specialized in providing Automation, Tools, and Integration engineering support, delivering effective, reliable, and maintainable automation solutions and tools across the corporation. My recent work involved supporting Wells Fargo's Cloud presence on <a href="https://azure.microsoft.com/en-us/" target="_blank">Azure</a> within the AI/ML space, providing solutions to facilitate the company's expansion into the Cloud.</p>
 
-
-    
     <p>Music is a significant part of my life. As a musician and recording engineer, I play drums, guitar, bass, and synthesizers, and produce music that blends electronic and organic sounds. My albums, released under the name Mechanisma, are available on <a href="https://open.spotify.com/artist/Mechanisma" target="_blank">Spotify</a>, <a href="https://music.apple.com/us/artist/mechanisma/Mechanisma" target="_blank">Apple Music</a>, and other platforms such as <a href="https://soundcloud.com/mechanisma" target="_blank">SoundCloud</a> and <a href="https://www.youtube.com/channel/Mechanisma" target="_blank">YouTube</a>. This creative pursuit is my artistic outlet, providing a balance to my technical career. The style is predominantly progressive rock/heavy metal and not for everyone! :)</p>
     
     <p><p>I lead a vibrant family life with my wife, daughter, and our adopted animal friends Eva and Felix. Cooking is a great passion of mine; whether it's making a quick, easy weekday meal or experimenting with a new recipe, the kitchen is my second home. I am continuously exploring <a href="https://www.home-assistant.io/docs/" target="_blank">home automation</a> technologies to make life smarter and more efficient. This interest aligns with my professional work and passion for automation (YAML YAML YAML!), allowing me to experiment with and implement smart solutions at home and free up time for other more high-value activities like cooking!</p>
@@ -203,8 +204,6 @@
     
     <p>I am currently exploring new opportunities that match my skills and passion for automation, UNIX, and cloud technologies, ideally in a remote work environment. I am furthering my studies in AI and large language model (LLM) technology, integrating these advancements into my own projects to stay at the forefront of innovation. I believe these tools have a very large place in the future of our technology, and it's our responsibility to learn how to implement them effectively and, most importantly, wisely. If my experience and personality sound like it might be a good fit for your team or project, please check out my complete <a href="#resume" class="link-to-resume">resume</a> and <a href="#contact" class="link-to-resume">get in touch</a>.</p>
 </section>
-
-        
         
         <section id="projects" class="content-section">
             <h1>Current Projects</h1>
