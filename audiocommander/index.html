@@ -46,7 +46,11 @@
   /* screenshots */
   .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
   .shots figure{margin:0}
-  .shots img{width:100%;border-radius:12px;border:1px solid var(--border);background:var(--panel)}
+  .shots img{width:100%;border-radius:12px;border:1px solid var(--border);background:var(--panel);cursor:zoom-in;transition:transform .2s ease,box-shadow .2s ease}
+  .shots img:hover{transform:scale(1.04);box-shadow:0 12px 34px rgba(0,0,0,.5)}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out;padding:2rem}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:96vw;max-height:92vh;border-radius:10px;box-shadow:0 10px 60px rgba(0,0,0,.6)}
   .shots figcaption{color:var(--muted);font-size:.88rem;text-align:center;margin-top:.5rem}
   footer{border-top:1px solid var(--border);padding:2rem 1.25rem;text-align:center;color:var(--muted);font-size:.9rem}
   footer a{color:var(--muted)}
@@ -89,10 +93,18 @@
   <section id="shots" class="wrap">
     <h2>A look inside</h2>
     <p class="lead">Live spectrum, parametric EQ, dynamics, and cleanup — in one compact popup.</p>
+    <p class="lead" style="margin-top:-1rem;font-size:.88rem">Click any shot to view it full-size.</p>
     <div class="shots">
+      <figure><img src="img/popup-main.png" alt="Main popup with live EQ and spectrum"><figcaption>Main popup — live EQ &amp; spectrum</figcaption></figure>
       <figure><img src="img/popup-boosted.png" alt="Popup boosting a tab to 150%"><figcaption>Boost a quiet tab to 150%</figcaption></figure>
-      <figure><img src="img/settings.png" alt="AudioCommander settings"><figcaption>Deep, tunable settings</figcaption></figure>
-      <figure><img src="img/help.png" alt="AudioCommander help and reference"><figcaption>Built-in help &amp; reference</figcaption></figure>
+      <figure><img src="img/popup-muted.png" alt="Popup with a tab muted"><figcaption>Per-tab mute</figcaption></figure>
+      <figure><img src="img/settings-shortcuts.png" alt="Customizable keyboard shortcuts"><figcaption>Customizable shortcuts</figcaption></figure>
+      <figure><img src="img/settings-options.png" alt="Audio options and settings"><figcaption>Options &amp; audio settings</figcaption></figure>
+      <figure><img src="img/settings-key-modal.png" alt="Recording a keyboard shortcut"><figcaption>Record a shortcut</figcaption></figure>
+      <figure><img src="img/settings-about.png" alt="About and actions"><figcaption>About &amp; actions</figcaption></figure>
+      <figure><img src="img/help-overview.png" alt="Built-in help overview"><figcaption>Built-in help</figcaption></figure>
+      <figure><img src="img/help-shortcuts.png" alt="Keyboard shortcut reference"><figcaption>Shortcut reference</figcaption></figure>
+      <figure><img src="img/help-troubleshooting.png" alt="Troubleshooting guide"><figcaption>Troubleshooting</figcaption></figure>
     </div>
   </section>
 
@@ -101,5 +113,17 @@
     &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a>
     &nbsp;·&nbsp; <a href="https://github.com/rlmajor/AudioCommander">GitHub</a>
   </footer>
+
+  <div id="lb" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview"><img id="lbimg" alt=""></div>
+  <script>
+    (function () {
+      var lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg');
+      document.querySelectorAll('.shots img').forEach(function (im) {
+        im.addEventListener('click', function () { lbimg.src = im.src; lbimg.alt = im.alt; lb.classList.add('open'); });
+      });
+      lb.addEventListener('click', function () { lb.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
+    })();
+  </script>
 </body>
 </html>
